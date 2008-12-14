@@ -1,0 +1,49 @@
+Metadata-Version: 1.0
+Name: rope
+Version: 0.9.1
+Summary: a python refactoring library...
+Home-page: http://rope.sf.net/
+Author: Ali Gholami Rudi
+Author-email: aligrudi@users.sourceforge.net
+License: GNU GPL
+Description: 
+        ========================================
+        rope, a python refactoring library ...
+        ========================================
+        
+        
+        Overview
+        ========
+        
+        `Rope`_ is a python refactoring library.
+        
+        .. _`rope`: http://rope.sf.net/
+        
+        
+        New Features
+        ============
+        
+        * added import_dynload_stdmods project variable
+        * finding dynload standard modules on windows
+        * fixed some windows-specific bugs
+        
+        If ``import_dynload_stdmods`` is set, most standard C-extension
+        modules are inserted to ``extension_modules``.  Note that rope uses
+        the source code to collect information about modules.  If rope cannot
+        find the source code of a module (like C-extensions), it can import
+        them directly, if listed in ``extension_modules`` variable, and
+        analyze them.
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: X11 Applications
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development

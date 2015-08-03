@@ -41,3 +41,18 @@
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+
+;; rebind keys the way that I like them
+(global-set-key "\M-g" 'goto-line)
+(global-set-key "\M-o" 'other-window)
+
+;; create a code-mode hook, which displays the line number on the side
+(add-hook 'my-code-mode-hook
+          (lambda () (linum-mode 1)))
+
+;; format the line number to four spaces
+(setq linum-format "%5d")
+
+;; activate my code hook for python
+(add-hook 'python-mode-hook
+          (lambda () (run-hooks 'my-code-mode-hook)))

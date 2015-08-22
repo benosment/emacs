@@ -7,6 +7,7 @@
 
 ;; get rid of the splash screen on startup
 (setq inhibit-splash-screen t)
+(tool-bar-mode -1)
 
 ;; display the line and column number
 (setq line-number-mode t)
@@ -38,13 +39,13 @@
 (load-theme 'atom-one-dark)
 
 ;; enable ido mode for better buffer matching
-(require 'ido)
-(ido-mode t)
-(setq ido-enable-flex-matching t)
+;;(ido-mode t)
+;;(setq ido-enable-flex-matching t)
 
 ;; rebind keys the way that I like them
 (global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-o" 'other-window)
+(global-set-key "\C-w" 'backward-kill-word)
 
 ;; create a code-mode hook, which displays the line number on the side
 (add-hook 'my-code-mode-hook
@@ -56,3 +57,9 @@
 ;; activate my code hook for python
 (add-hook 'python-mode-hook
           (lambda () (run-hooks 'my-code-mode-hook)))
+
+;; helm -- just trying it out for now
+(require 'helm-config)
+(helm-mode 1)
+
+(global-set-key (kbd "M-x") 'helm-M-x)

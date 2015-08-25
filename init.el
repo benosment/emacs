@@ -8,6 +8,7 @@
 ;; get rid of the splash screen on startup
 (setq inhibit-splash-screen t)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; display the line and column number
 (setq line-number-mode t)
@@ -38,14 +39,14 @@
 ;; Use the atom one dark theme
 (load-theme 'atom-one-dark)
 
-;; enable ido mode for better buffer matching
-;;(ido-mode t)
-;;(setq ido-enable-flex-matching t)
 
 ;; rebind keys the way that I like them
 (global-set-key "\M-g" 'goto-line)
 (global-set-key "\M-o" 'other-window)
 (global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-h" 'backward-delete-char)
+(global-set-key "\C-j" 'newline-and-indent)
+(global-set-key "\C-x\C-k" 'kill-region)
 
 ;; create a code-mode hook, which displays the line number on the side
 (add-hook 'my-code-mode-hook
@@ -58,8 +59,15 @@
 (add-hook 'python-mode-hook
           (lambda () (run-hooks 'my-code-mode-hook)))
 
-;; helm -- just trying it out for now
+;; have a mixture of helm and IDO
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+
 (require 'helm-config)
 (helm-mode 1)
+(setq helm-mode-fuzzy-match t)
+(setq helm-completion-in-region-fuzzy-match t)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x f") 'ido-find-file)
+(global-set-key (kbd "C-x b") 'helm-mini)

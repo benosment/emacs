@@ -67,7 +67,12 @@
 (helm-mode 1)
 (setq helm-mode-fuzzy-match t)
 (setq helm-completion-in-region-fuzzy-match t)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x f") 'ido-find-file)
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
 (global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-b") 'helm-mini)
+
+(global-set-key (kbd "C-x g") 'magit-status)

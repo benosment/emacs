@@ -76,3 +76,7 @@
 (global-set-key (kbd "C-x C-b") 'helm-mini)
 
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x e") 'eshell)
+
+(require 'yasnippet)
+(yas-global-mode 1)

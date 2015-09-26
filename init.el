@@ -86,3 +86,10 @@
   (python-shell-get-or-create-process "/usr/bin/python3 -i" nil t))
 
 (advice-add 'python-shell-send-buffer :before #'python-shell-send-buffer-no-prompt)
+
+;; Git specific config
+(setq magit-push-always-verify nil)
+
+(elpy-enable)
+(setq elpy-rpc-python-command "python3")
+(setq python-shell-interpreter "python3")
